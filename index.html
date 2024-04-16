@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSA-Verfahren: Eine mathematische Erklärung</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        h1, h2 {
+            text-align: left;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>RSA-Verfahren: Eine mathematische Erklärung</h1>
+    <p><strong>Joris R. Parthier</strong></p>
+    <p><strong>12.4.2024</strong></p>
+    <h2>1 Grundlagen und Modulare Inverse</h2>
+    <p>Die modulare Arithmetik ist eine Schlüsselkomponente im Verständnis des RSA-Verfahrens. Betrachten wir ein einfaches Beispiel: 2 × 3 ≡ 1 (mod 5) und 2 x 3 ≡ 1 in ℤ<sub>5</sub>. In ℝ wäre 2-1 = 5, aber in ℤ<sub>5</sub> ist 2-1 = 3, da 2 x 3 ≡ 6 ≡ 1 (mod 5).</p>
+    <p>Dies zeigt, dass es eine Inverse gibt, weil 2 und 5 teilerfremd sind, was durch den euklidischen Algorithmus bestimmbar ist.</p>
+    <hr>
+    <h2>2 Erzeugung eines RSA-Schlüsselpaares</h2>
+    <p>Wähle zwei große Primzahlen p und q.</p>
+    <p>Berechne n = p x q und φ(n) = (p - 1)(q - 1), wobei φ die Eulersche Phi-Funktion ist, die die Anzahl der Zahlen von 1 bis n zählt, die teilerfremd zu n sind.</p>
+    <p>Wähle e ∈ ℕ mit ggT(e, φ(n)) = 1.</p>
+    <p>Bestimme d so, dass e x d ≡ 1 (mod φ(n)).</p>
+    <p>Das private Schlüsselpaar ist (d, n), das öffentliche Schlüsselpaar ist (e, n).</p>
+    <hr>
+    <h2>3 Verschlüsselung und Entschlüsselung</h2>
+    <p>Zum Verschlüsseln einer Nachricht m, berechne c = m<sup>e</sup> (mod n). Zum Entschlüsseln von c, berechne m = c<sup>d</sup> (mod n). Die Begründung hierfür ist, dass cd ≡ (m<sup>e</sup>)<sup>d</sup> ≡ m<sup>ed</sup> ≡ m<sup>φ(n)+1</sup> ≡ m (mod n).</p>
+    <hr>
+    <h2>Weitere Ressourcen</h2>
+    <p>Hier sind einige zusätzliche Ressourcen zur Vertiefung in das RSA-Verfahren:</p>
+    <ul>
+        <li><a href="#">RSA-Algorithmus: Ein ausführlicher Leitfaden</a></li>
+        <li><a href="#">Video-Tutorial zur RSA-Verschlüsselung</a></li>
+        <li><a href="#">RSA-Verfahren: Praktische Anwendungen und Implementierungen</a></li>
+    </ul>
+</body>
+</html>
